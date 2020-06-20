@@ -6,9 +6,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './components/products/product/product.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
+import {ContactoComponent} from './components/contacto/contacto.component';
 
 const routes: Routes = [
   {path:'viajes',component:ProductComponent},
+  {path:'contacto',component:ContactoComponent},
   {path:'listaviajes',component:ProductListComponent},
   {
     path: '',

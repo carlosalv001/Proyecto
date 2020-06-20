@@ -22,6 +22,7 @@ import { ViajesComponent } from './components/viajes/viajes.component';
 import{AngularFireDatabaseModule} from '@angular/fire/database';
 import {FormsModule} from '@angular/forms';
 import {ProductService} from './services/product.service';
+import { ContactoComponent } from './components/contacto/contacto.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import {ProductService} from './services/product.service';
     ProductListComponent,
     ProductComponent,
     //LoginComponent,
-    ViajesComponent
+    ViajesComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,

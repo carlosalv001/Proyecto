@@ -17,6 +17,9 @@
       <li class="nav-item active">
         <a class="nav-link" routerLink="/">Home</a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['contacto']">contacto</a>
+      </li>
     </ul>
     <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
       
