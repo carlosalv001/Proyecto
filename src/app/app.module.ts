@@ -12,6 +12,8 @@ import { AuthService } from '@auth/services/auth.service';
 import { CanSuscriptorGuard } from '@app/auth/guards/can-suscriptor.guard';
 import { CanAdminGuard } from '@auth/guards/can-admin.guard';
 import { CanEditGuard } from '@auth/guards/can-edit.guard';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 import { ProductsComponent } from './components/products/products.component';
@@ -41,6 +43,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
+    HttpClientModule,
    
    
     AngularFireDatabaseModule,
