@@ -13,6 +13,7 @@ import { CanSuscriptorGuard } from '@app/auth/guards/can-suscriptor.guard';
 import { CanAdminGuard } from '@auth/guards/can-admin.guard';
 import { CanEditGuard } from '@auth/guards/can-edit.guard';
 import { HttpClientModule } from '@angular/common/http';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -25,6 +26,7 @@ import{AngularFireDatabaseModule} from '@angular/fire/database';
 import {FormsModule} from '@angular/forms';
 import {ProductService} from './services/product.service';
 import { ContactoComponent } from './components/contacto/contacto.component';
+import { MessageService } from './services/message.service';
 
 
 @NgModule({
@@ -44,12 +46,13 @@ import { ContactoComponent } from './components/contacto/contacto.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     HttpClientModule,
+    SweetAlert2Module.forRoot(),
    
    
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard, ProductService],
+  providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard, ProductService, MessageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

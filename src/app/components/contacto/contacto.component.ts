@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MessageService } from '../../services/message.service';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { HttpClient } from '@angular/common/http';
 export class ContactoComponent implements OnInit {
    nodemailer:any;
 
-  constructor(private _http: HttpClient) { }
+  constructor(public _MessageService: MessageService) { }
 
   ngOnInit(): void {
   }
@@ -30,9 +31,20 @@ export class ContactoComponent implements OnInit {
     console.log(user.apellid);
     console.log(user.comentari);
 
-    this._http.post('http://localhosts:3000/sendmail',user);
+    //return this._http.post('http://localhost:3000/formulario', user);
 
   }
   
+  contactForm(form) {
+    this._MessageService.sendMessage(form).subscribe(() => {
+     /* Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      })*/
+      alert("todo bien");
+    });
+    }
 
 }
