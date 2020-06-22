@@ -9,6 +9,8 @@ import {
   AngularFirestoreDocument,
 } from '@angular/fire/firestore';
 import { RoleValidator } from '@auth/helpers/roleValidator';
+import Swal from 'sweetalert2';
+
 
 @Injectable({ providedIn: 'root' })
 export class AuthService extends RoleValidator {
@@ -59,7 +61,34 @@ export class AuthService extends RoleValidator {
       this.updateUserData(user);
       return user;
     } catch (error) {
-      console.log(error);
+     
+     if(error.code=="auth/user-not-found"){ //por si el correo no existe
+      Swal.fire(
+        'Error!',
+        'El correo ingresado es incorrecto',
+        'error',
+       
+     );
+     }
+
+     if(error.code=="auth/wrong-password"){//por si la contraseña no es correcta
+      Swal.fire(
+        'Error!',
+        'La contraseña ingresada es incorrecta',
+        'error',
+       
+     );
+     }
+
+     if(error.code!="auth/wrong-password" && error.code!="auth/user-not-found"){//por si algo mas pasa
+      Swal.fire(
+        'Error!',
+        'Algo ocurrio mal',
+        'error',
+       
+     );
+     }
+      console.log(error.code);
     }
   }
 

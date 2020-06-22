@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
 import { AuthService } from '@auth/services/auth.service';
 import { Router } from '@angular/router';
 import { User } from '@app/shared/models/user.interface';
+import Swal from 'sweetalert2';
+ 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -23,6 +25,14 @@ export class LoginComponent {
         this.checkUserIsVerified(user);
       }
     } catch (error) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+      });
+      alert("hola");
+      console.log("totis");
       console.log(error);
     }
   }
@@ -35,6 +45,14 @@ export class LoginComponent {
         this.checkUserIsVerified(user);
       }
     } catch (error) {
+       Swal.fire(
+         'Error!',
+         'Do you want to continue',
+         'error',
+        
+      );
+      alert("hola");
+      console.log("pulga");
       console.log(error);
     }
   }
