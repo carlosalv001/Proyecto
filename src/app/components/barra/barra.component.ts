@@ -42,6 +42,7 @@ export class BarraComponent  {
 
   public randomize(): void {
     // Only Change 3 values
+    console.log("hola");
     const data = [
       Math.round(Math.random() * 100),
       59,

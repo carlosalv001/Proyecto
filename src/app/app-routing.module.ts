@@ -7,6 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './components/products/product/product.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
 import {ContactoComponent} from './components/contacto/contacto.component';
+import {BarraComponent} from './components/barra/barra.component';
 
 const routes: Routes = [
   {path:'viajes',component:ProductComponent},
@@ -35,6 +36,8 @@ const routes: Routes = [
     path: 'verification-email',
     component: SendEmailComponent,
   },
+
+  {path:'informacion',component:BarraComponent},
   
   
 

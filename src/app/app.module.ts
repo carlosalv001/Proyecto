@@ -44,7 +44,10 @@ import { from } from 'rxjs';
     ProductComponent,
     //LoginComponent,
     ViajesComponent,
-    ContactoComponent
+    ContactoComponent,
+    BarraComponent,
+    QrComponent
+    
   ],
   imports: [
     BrowserModule,
