@@ -1,17 +1,48 @@
-<div>
-    <div>
-      <div style="display: block">
-        <canvas baseChart
-          [datasets]="barChartData"
-          [labels]="barChartLabels"
-          [options]="barChartOptions"
-         
-          [legend]="barChartLegend"
-          [chartType]="barChartType">
-        </canvas>
-      </div>
-      <button class="btn btn-primary" (click)="randomize()">Actualizar</button>
-    </div>
-  </div>
 
+  <div class="card">
+    <div class="card-body">
+        <h3>List of travels </h3>
+            <table class="table table-sm table-hover">
+                <tbody>
+                    <tr>
+                        <td><h5>Name</h5></td>
+                        <td><h5>Category</h5></td>
+                        <td><h5>Location</h5></td>
+                        <td><h5>Price</h5></td>
+                    </tr>
+                    <tr *ngFor="let product of productList"> 
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.location}}</td>
+                        <td>{{product.price}}</td>
+                        <a class="btn btn-secondary text-dark" routerLink="/viajes" (click)="onEdit(product)" >
+                            <i class="far fa-edit"></i>
+                        </a>
+                        <a class="btn btn-danger text-white" (click)="onDelete(product.$key)">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </tr>
+                </tbody>
+
+            </table>
+       
+    </div>
+</div>
+
+<div *ngIf="bandera==true">
+  <div>
+    <div style="display: block">
+      <canvas baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+       
+        [legend]="barChartLegend"
+        [chartType]="barChartType">
+      </canvas>
+    </div>
+   
+  </div>
+</div>
+<button class="btn btn-primary" (click)="randomize()">Generar grafica de temporada mas vendida</button>
   <!-- [plugins]="barChartPlugins" -->

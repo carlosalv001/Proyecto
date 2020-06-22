@@ -34,6 +34,7 @@ export class ProductListComponent implements OnInit {
         this.productList.push(x as Product);
       });
     });
+    console.log(this.productList);
   }
 
   onEdit(product:Product){
