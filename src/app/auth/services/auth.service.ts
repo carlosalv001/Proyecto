@@ -52,14 +52,27 @@ export class AuthService extends RoleValidator {
     return (await this.afAuth.currentUser).sendEmailVerification();
   }
 
-  async login(email: string, password: string): Promise<User> {
+  async login(email: string, password: string, confirmpass:string): Promise<User> {
+    console.log(password);
+    console.log(confirmpass);
     try {
-      const { user } = await this.afAuth.signInWithEmailAndPassword(
+      if(password==confirmpass){
+        const { user } = await this.afAuth.signInWithEmailAndPassword(
         email,
         password
-      );
-      this.updateUserData(user);
-      return user;
+        );
+        this.updateUserData(user);
+        return user;
+      }else{
+        Swal.fire(
+          'Error!',
+          'La constraseña no es igual a la confirmacion',
+          'error',
+         
+       );
+      }
+      
+
     } catch (error) {
      
      if(error.code=="auth/user-not-found"){ //por si el correo no existe

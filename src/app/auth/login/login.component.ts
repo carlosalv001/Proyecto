@@ -15,6 +15,7 @@ export class LoginComponent {
   loginForm = new FormGroup({
     email: new FormControl(''),
     password: new FormControl(''),
+    confirmpass: new FormControl(''),
   });
   constructor(private authSvc: AuthService, private router: Router) {}
 
@@ -31,19 +32,17 @@ export class LoginComponent {
         icon: 'error',
         confirmButtonText: 'Cool'
       });
-      alert("hola");
-      console.log("totis");
       console.log(error);
     }
   }
 
   async onLogin() {
-    const { email, password } = this.loginForm.value;
+    const { email, password,confirmpass } = this.loginForm.value;
     try {
-      const user = await this.authSvc.login(email, password);
+      const user = await this.authSvc.login(email, password,confirmpass);
       if (user) {
         this.checkUserIsVerified(user);
-      }
+      } 
     } catch (error) {
        Swal.fire(
          'Error!',
@@ -51,8 +50,6 @@ export class LoginComponent {
          'error',
         
       );
-      alert("hola");
-      console.log("pulga");
       console.log(error);
     }
   }
