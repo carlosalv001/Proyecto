@@ -45,7 +45,7 @@ import { MessageService } from './services/message.service';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    HttpClientModule,
+    HttpClientModule, 
     SweetAlert2Module.forRoot(),
    
    
