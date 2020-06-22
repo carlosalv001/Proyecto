@@ -13,7 +13,13 @@ import { CanSuscriptorGuard } from '@app/auth/guards/can-suscriptor.guard';
 import { CanAdminGuard } from '@auth/guards/can-admin.guard';
 import { CanEditGuard } from '@auth/guards/can-edit.guard';
 import { HttpClientModule } from '@angular/common/http';
-import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2'; //aletas bonitas
+// necesarios para los graficos
+import { ChartsModule } from 'ng2-charts';
+import { BarraComponent } from './components/barra/barra.component';
+// los necesarios para el qr
+import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { QrComponent } from './components/qr/qr.component';
 
 
 
@@ -27,6 +33,7 @@ import {FormsModule} from '@angular/forms';
 import {ProductService} from './services/product.service';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { MessageService } from './services/message.service';
+import { from } from 'rxjs';
 
 
 @NgModule({
@@ -45,8 +52,11 @@ import { MessageService } from './services/message.service';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    HttpClientModule, 
+    HttpClientModule,   
     SweetAlert2Module.forRoot(),
+    NgxQRCodeModule,
+    ChartsModule,
+
    
    
     AngularFireDatabaseModule,
