@@ -22,14 +22,14 @@
       </li>
     </ul>
     <ul class="navbar-nav mx-auto" *ngIf="user$ | async as user; else login">
-      <li class="nav-item" *ngIf="user?.email=='carlosalvmtz@hotmail.com'"> <!--Esto es para que solo lo 
+      <li class="nav-item" *ngIf="user?.email=='admin@hotmail.com'"> <!--Esto es para que solo lo 
         pueda ver el admin-->
         <a class="nav-link" [routerLink]="['viajes']"> Registrar viajes</a> <!--admin-->
       </li>
-      <li class="nav-item" *ngIf="user?.email=='carlosalvmtz@hotmail.com'"> <!--admin-->
+      <li class="nav-item" *ngIf="user?.email=='admin@hotmail.com'"> <!--admin-->
         <a class="nav-link" [routerLink]="['listaviajes']" > Ver viajes</a>
       </li>
-      <li class="nav-item" *ngIf="user?.email=='carlosalvmtz@hotmail.com'"><!--admin-->
+      <li class="nav-item" *ngIf="user?.email=='admin@hotmail.com'"><!--admin-->
         <a class="nav-link" [routerLink]="['informacion']" >Informacion</a>
       </li>
       <li class="nav-item">

@@ -171,8 +171,6 @@ export class BarraComponent  {
     data_prim.push(0);
     data_prim.push(0);
     data_prim.push(totprim);
-
-
     
 
     this.ngOnInit();
