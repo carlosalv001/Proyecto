@@ -33,6 +33,7 @@ import {FormsModule} from '@angular/forms';
 import {ProductService} from './services/product.service';
 import { ContactoComponent } from './components/contacto/contacto.component';
 import { MessageService } from './services/message.service';
+import { WindowService } from './services/window.service';
 import { from } from 'rxjs';
 
 
@@ -65,7 +66,8 @@ import { from } from 'rxjs';
     AngularFireDatabaseModule,
     FormsModule
   ],
-  providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard, ProductService, MessageService],
+  providers: [AuthService, CanEditGuard, CanAdminGuard, CanSuscriptorGuard, ProductService, MessageService
+  ,WindowService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
